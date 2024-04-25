@@ -1,7 +1,6 @@
-﻿namespace Oop.Main.Models.Accounts
+﻿namespace Oop.Main.Models.Accounts;
+
+public interface ICheckingAccount
 {
-    public interface ICheckingAccount
-    {
-        void Deposit(string checkNumber, decimal amount);
-    }
+    void Deposit(string checkNumber, decimal amount);
 }

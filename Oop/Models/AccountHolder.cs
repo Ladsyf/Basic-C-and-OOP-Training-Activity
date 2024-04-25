@@ -1,17 +1,27 @@
 ﻿using Oop.Main.Models.Accounts;
-using Oop.Main.Models.Loans;
 
-namespace Oop.Main.Models
+namespace Oop.Main.Models;
+public class AccountHolder
 {
-    public class AccountHolder
+    public AccountHolder(string name, Account account)
     {
-        public AccountHolder(string name, Account account)
+        AccountName = name;
+        Account = account;
+        Loans = [];
+    }
+
+    public string AccountName { get; }
+
+    public Account Account { get; }
+
+    public List<Loan> Loans { get; }
+
+    public void DisplayAllLoanDetails()
+    {
+        foreach (Loan loan in Loans)
         {
-            Name = name;
-            Account = account;
+            loan.DisplayLoanDetails();
+            Console.WriteLine("\n\n");
         }
-        public Account Account { get; }
-        public string Name { get; }
-        public IReadOnlyList<Loan> Loans { get; }
     }
 }

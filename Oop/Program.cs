@@ -1,37 +1,25 @@
 ﻿using Oop.Main.Models;
 using Oop.Main.Models.Accounts;
+using Oop.Main.Models.Loans;
 
-namespace Oop.Main
+namespace Oop.Main;
 
+internal class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            var accountHolder = new AccountHolder("Juan Dela Cruz", new CheckingAccount());
+        var accountHolder = new AccountHolder("Juan Dela Cruz", new CheckingAccount());
 
-            var checkingAccount = (ICheckingAccount) accountHolder.Account;
-            
-            if(checkingAccount != null)
-                checkingAccount.Deposit("asdsad",100000);
+        var newCarLoan = new CarLoan(100000, 12, "Toyota Fortuner");
 
+        accountHolder.Loans.Add(newCarLoan);
 
-            //var account = new Account();
+        var newPersonalLoan = new PersonalLoan(100000, 12, "Renovation");
 
-            //account.Deposit(50000);
-            //account.Withdraw(20000);
+        accountHolder.Loans.Add(newPersonalLoan);
 
-            //Console.WriteLine($"My balance is {account.GetBalance():n}");
+        accountHolder.DisplayAllLoanDetails();
 
-            //var loan = new Loan(100000, .05, 12);
-
-            //var loanAmount = loan.CalculateTotalPayment();
-
-            //loan.DisplayLoanDetails();
-
-            //Console.WriteLine($"Total payment should be: {loanAmount:n}");
-
-            Console.Read();
-        }
+        Console.ReadLine();
     }
 }

@@ -1,35 +1,39 @@
-﻿namespace Oop.Main.Models.Accounts
+﻿namespace Oop.Main.Models.Accounts;
 
+public abstract class Account
 {
-    public class Account
+    private decimal _balance;
+
+    public Account()
     {
-        private decimal _balance;
-        public Account()
-        {
-            AccountNumber = Guid.NewGuid();
-        }
+        AccountNumber = Guid.NewGuid();
+    }
 
-        public Guid AccountNumber { get; }
+    public Guid AccountNumber { get; }
 
-        public void Deposit(decimal amount)
-        {
-            _balance += amount;
-            Console.WriteLine($"Deposited: {amount:n}");
-        }
+    public abstract string Type { get; }
 
-        public virtual void Withdraw(decimal amount)
-        {
-            if (amount <= _balance)
-            {
-                _balance -= amount;
-                Console.WriteLine($"Withdrawn: {amount:n}");
-            }
-            else Console.WriteLine("Insufficient funds");
-        }
+    public void Deposit(decimal amount)
+    {
+        _balance += amount;
+        Console.WriteLine($"Deposited: {amount:n}");
+    }
 
-        public decimal GetBalance()
+    public virtual void Withdraw(decimal amount)
+    {
+        if (amount <= _balance)
         {
-            return _balance;
+            _balance -= amount;
+            Console.WriteLine($"Withdrawn: {amount:n}");
         }
+        else
+        {
+            Console.WriteLine("Insufficient funds");
+        }
+    }
+
+    public decimal GetBalance()
+    {
+        return _balance;
     }
 }

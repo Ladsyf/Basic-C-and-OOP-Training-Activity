@@ -1,11 +1,14 @@
-﻿namespace Oop.Main.Models.Accounts
+﻿namespace Oop.Main.Models.Accounts;
+
+public class CheckingAccount : Account, ICheckingAccount
 {
-    public class CheckingAccount : Account, ICheckingAccount
+    public override string Type => "Checking Account";
+
+    public void Deposit(string checkNumber, decimal amount)
     {
-        public void Deposit(string checkNumber, decimal amount)
-        {
-            Deposit(amount);
-            Console.WriteLine($"Check Number {checkNumber}");
-        }
+        Console.WriteLine($"Account Number : {AccountNumber}");
+        Console.WriteLine($"Check number : {checkNumber}");
+
+        base.Deposit(amount);
     }
 }

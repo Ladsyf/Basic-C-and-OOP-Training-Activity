@@ -1,7 +1,11 @@
 ﻿namespace Oop.Main.Models.Loans
 {
-    public class HousingLoan
+    public class HousingLoan : Loan
     {
-        private const double rate = 0.07;
+        public override string Type => "Housing Loan";
+
+        public HousingLoan(decimal amount, int duration) : base(amount, 0.7, duration)
+        {
+        }
     }
 }

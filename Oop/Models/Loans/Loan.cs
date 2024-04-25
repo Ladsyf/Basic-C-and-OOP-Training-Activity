@@ -1,30 +1,33 @@
-﻿namespace Oop.Main.Models.Loans
+﻿namespace Oop.Main.Models;
+
+public abstract class Loan
 {
-    public class Loan
+    private readonly decimal _amount;
+    private readonly double _interestRate;
+    private readonly int _duration;
+
+    public Loan() : this(0, 0, 0)
     {
-        protected decimal _amount;
-        protected double _interestRate;
-        protected int _duration;
-        public Loan() : this(0, 0, 0)
-        { }
-        public Loan(decimal amount, double interestRate, int duration)
-        {
-            _amount = amount;
-            _interestRate = interestRate;
-            _duration = duration;
-        }
+    }
 
-        public decimal CalculateTotalPayment()
-        {
-            return _amount * (decimal)Math.Pow(1 + _interestRate, _duration);
-        }
+    public Loan(decimal amount, double interestRate, int duration)
+    {
+        _amount = amount;
+        _interestRate = interestRate;
+        _duration = duration;
+    }
 
-        public void DisplayLoanDetails()
-        {
-            Console.WriteLine("Loan amount: " + _amount);
-            Console.WriteLine("Interest rate is " + _interestRate);
-            Console.WriteLine("Duration is: " + _duration + "months");
-        }
+    public abstract string Type { get; }
 
+    public decimal CalculateTotalPayment()
+    {
+        return _amount * (decimal)Math.Pow(1 + _interestRate, _duration);
+    }
+
+    public virtual void DisplayLoanDetails()
+    {
+        Console.WriteLine("Loan amount: " + _amount);
+        Console.WriteLine("Interest rate: " + _interestRate);
+        Console.WriteLine("Duration: " + _duration + " months");
     }
 }

@@ -1,7 +1,22 @@
 ﻿namespace Oop.Main.Models.Loans
 {
-    public class PersonalLoan
+    public class PersonalLoan : Loan
     {
-        private const double rate = 0.03;
+        private readonly string _purpose;
+
+        public PersonalLoan(decimal amount, int duration, string purpose) : base(amount, 0.3, duration)
+        {
+            _purpose = purpose;
+        }
+
+        public override string Type => "Personal Loan";
+
+        public override void DisplayLoanDetails()
+        {
+            Console.WriteLine($"Type of Loan: {Type}");
+            Console.WriteLine($"Purpose of Loan: {_purpose}");
+            Console.WriteLine($"{Type} Details:");
+            Console.WriteLine($"\t Total Loan: {CalculateTotalPayment()}");
+        }
     }
 }
