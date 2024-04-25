@@ -4,7 +4,7 @@
     {
         private readonly string _purpose;
 
-        public PersonalLoan(decimal amount, int duration, string purpose) : base(amount, 0.3, duration)
+        public PersonalLoan(decimal amount, int duration, string purpose) : base(amount, 0.03, duration)
         {
             _purpose = purpose;
         }

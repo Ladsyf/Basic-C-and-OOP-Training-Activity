@@ -4,7 +4,7 @@
     {
         private readonly string _carModel;
 
-        public CarLoan(decimal amount, int duration, string carModel) : base(amount, 0.5, duration)
+        public CarLoan(decimal amount, int duration, string carModel) : base(amount, 0.05, duration)
         {
             _carModel = carModel;
         }

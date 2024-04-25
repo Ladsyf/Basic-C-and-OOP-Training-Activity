@@ -7,7 +7,7 @@ public class AccountHolder
     {
         AccountName = name;
         Account = account;
-        Loans = [];
+        Loans = new();
     }
 
     public string AccountName { get; }

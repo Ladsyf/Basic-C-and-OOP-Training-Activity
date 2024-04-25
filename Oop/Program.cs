@@ -10,11 +10,11 @@ internal class Program
     {
         var accountHolder = new AccountHolder("Juan Dela Cruz", new CheckingAccount());
 
-        var newCarLoan = new CarLoan(100000, 12, "Toyota Fortuner");
+        var newCarLoan = new CarLoan(100000, 3, "Toyota Fortuner");
 
         accountHolder.Loans.Add(newCarLoan);
 
-        var newPersonalLoan = new PersonalLoan(100000, 12, "Renovation");
+        var newPersonalLoan = new PersonalLoan(10000, 1, "Renovation");
 
         accountHolder.Loans.Add(newPersonalLoan);
 
