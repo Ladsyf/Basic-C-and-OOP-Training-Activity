@@ -16,7 +16,7 @@
             Console.WriteLine($"Type of Loan: {Type}");
             Console.WriteLine($"{Type} Details:");
             Console.WriteLine($"\t Car Model: {_carModel}");
-            Console.WriteLine($"\t Total Loan: {CalculateTotalPayment()}");
+            Console.WriteLine($"\t Total Loan: {CalculateTotalPayment():n}");
         }
     }
 }

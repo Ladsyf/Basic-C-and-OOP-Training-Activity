@@ -19,7 +19,5 @@ internal class Program
         accountHolder.Loans.Add(newPersonalLoan);
 
         accountHolder.DisplayAllLoanDetails();
-
-        Console.ReadLine();
     }
 }

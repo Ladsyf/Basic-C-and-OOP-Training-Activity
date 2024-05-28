@@ -16,7 +16,7 @@
             Console.WriteLine($"Type of Loan: {Type}");
             Console.WriteLine($"Purpose of Loan: {_purpose}");
             Console.WriteLine($"{Type} Details:");
-            Console.WriteLine($"\t Total Loan: {CalculateTotalPayment()}");
+            Console.WriteLine($"\t Total Loan: {CalculateTotalPayment():n}");
         }
     }
 }
